@@ -1,0 +1,20 @@
+
+###########################Clear Commit History and Keep Current Files
+git clone https://github.com/<username>/<repository>.git
+cd <repository>
+
+###################Create a New Commit Tree: Remove all existing commit history while keeping the current state of the files
+git checkout --orphan new-branch
+
+##################Add and Commit File
+git add .
+git commit -m "Initial commit with cleared history"
+
+#################Delete the Old Branch
+git branch -D main
+
+####################Rename the New Branch to main
+git branch -m main
+
+###################Force-Push the Changes
+git push --force origin main
